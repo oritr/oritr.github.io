@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Street View Controls</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      function initPano() {
+        // Note: constructed panorama objects have visible: true
+        // set by default.
+       //51.5065106,-0.0852217
+        const panorama = new google.maps.StreetViewPanorama(
+          document.getElementById("map"),
+          {
+            position: { lat: 51.5065106, lng: -0.0852217 },
+            addressControl: false,
+            linksControl: false,
+            panControl: false,
+            enableCloseButton: false,
+            showRoadLabels: false
+          }
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa1MlAgqeVclzAmUY4ZAxaHfPBWHtpZu8&callback=initPano&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
